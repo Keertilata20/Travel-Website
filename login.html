@@ -115,6 +115,9 @@ button:hover {
 
 <div id="loginBox">
   <p class="subtitle">Ready to explore? ✈️</p>
+  <p style="color:white; font-size:14px;">
+  Demo Login: demo / 1234
+</p>
 
   <div id="loader" style="display:none; color:white; margin-top:20px;">
   Checking credentials... ⏳
@@ -138,8 +141,9 @@ button:hover {
 
 <script>
 function login() {
-  let correctUser = "Keerti";
-  let correctPass = "23190503035";
+ /* Demo login credentials (for testing only) */ 
+let correctUser = "demo";
+let correctPass = "1234";
 
   let user = document.getElementById("username").value.trim();
   let pass = document.getElementById("password").value.trim();
@@ -161,7 +165,7 @@ function login() {
 
 
   } else {
-    errorBox.innerHTML = "Invalid Username or Password ❌";
+    errorBox.innerHTML = "Invalid login (try demo / 1234)";
   }
 }
 
