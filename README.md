@@ -1,15 +1,34 @@
 # ✈️ K35 Travel Website
 
-A responsive travel website built using HTML, CSS, and JavaScript.
+A responsive travel website built using HTML, CSS, and JavaScript.  
+This project was originally created as part of a Web Technology lab and later enhanced as a demo project.
 
-## Features
-- Login system (localStorage)
-- Dark mode
-- Animated slider
-- Contact form validation
-- Responsive design
+## 🌐 Live Demo
+👉 https://keertilata20.github.io/Travel-Website/
 
-## Tech Used
+## 🚀 Features
+- 🔐 Demo login system (localStorage-based)
+- 🌙 Dark mode toggle
+- 🎞️ Animated image slider
+- 📩 Contact form with validation
+- 📱 Fully responsive design
+- 📊 Scroll progress indicator
+- 💬 Interactive popups
+
+## 🧪 Demo Credentials
+
+- Username: demo
+- Password: 1234
+
+
+## 🛠️ Tech Stack
 - HTML
 - CSS
 - JavaScript
+
+
+## 📌 Note
+This is a frontend-only demo project. No real authentication or backend is used.
+
+## 👩‍💻 Author
+Keerti Lata Choudhury
