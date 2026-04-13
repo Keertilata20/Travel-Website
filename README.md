@@ -12,8 +12,30 @@
 A responsive travel website built using HTML, CSS, and JavaScript.  
 This project was originally created as part of a Web Technology lab and later enhanced as a demo project.
 
+---
+
 ## 🌐 Live Demo
 👉 https://keertilata20.github.io/Travel-Website/
+
+
+---
+
+
+## 📸 Screenshots
+
+### 🔐 Login & Home
+<p align="center">
+  <img src="screenshots/login.png" width="45%" />
+  <img src="screenshots/home.png" width="45%" />
+</p>
+
+### 📦 Packages & Contact
+<p align="center">
+  <img src="screenshots/packages.png" width="45%" />
+  <img src="screenshots/contact.png" width="45%" />
+</p>
+
+---
 
 ## 🚀 Features
 - 🔐 Demo login system (localStorage-based)
@@ -24,10 +46,14 @@ This project was originally created as part of a Web Technology lab and later en
 - 📊 Scroll progress indicator
 - 💬 Interactive popups
 
+---
+
 ## 🧪 Demo Credentials
 
 - Username: demo
 - Password: 1234
+
+---
 
 
 ## 🛠️ Tech Stack
@@ -36,8 +62,14 @@ This project was originally created as part of a Web Technology lab and later en
 - JavaScript
 
 
+---
+
 ## 📌 Note
 This is a frontend-only demo project. No real authentication or backend is used.
 
+---
+
 ## 👩‍💻 Author
 Keerti Lata Choudhury
+
+---
