@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 60px;
+}
+
+/* Container */
+.container {
+  text-align: center;
+}
+
+
+/* Heading */
+#title {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff8c42, #ffa751);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+/* Login Box */
+#loginBox {
+  padding: 40px;
+  animation: fadeUp 0.8s ease;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.subtitle {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.6);
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px #ff8c42;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff8c42, #ffa751);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Password eye */
+.password-container {
+  position: relative;
+}
+
+.password-container span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Error */
+#error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 id="title">Login</h2>
+
+<div id="loginBox">
+  <p class="subtitle">Ready to explore? ✈️</p>
+  <p style="color:white; font-size:14px;">
+  Demo Login: demo / 1234
+</p>
+
+  <div id="loader" style="display:none; color:white; margin-top:20px;">
+  Checking credentials... ⏳
+</div>
+
+  Username:<br>
+  <input type="text" id="username"><br><br>
+
+  Password:<br>
+  <div class="password-container">
+    <input type="password" id="password">
+    <span onclick="togglePassword()">👁️</span>
+  </div>
+
+  <div id="error"></div>
+
+  <button onclick="login()">Login</button>
+</div>
+
+</div>
+
+<script>
+function login() {
+  // Demo login credentials (for testing only)
+let correctUser = "demo";
+let correctPass = "1234";
+
+  let user = document.getElementById("username").value.trim();
+  let pass = document.getElementById("password").value.trim();
+  let errorBox = document.getElementById("error");
+
+  if (user === "" || pass === "") {
+    errorBox.innerHTML = "Please fill all fields!";
+    return;
+  }
+
+ if (user === correctUser && pass === correctPass) {
+
+  document.getElementById("loader").style.display = "block";
+
+  setTimeout(() => {
+    localStorage.setItem("loggedInUser", user);
+    window.location.href = "index.html";
+  }, 1500);
+
+
+  } else {
+    errorBox.innerHTML = "Invalid login (try demo / 1234)";
+  }
+}
+
+function togglePassword() {
+  let pass = document.getElementById("password");
+  pass.type = pass.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>

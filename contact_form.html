@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - K35 Travel</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- SAME HEADER-->
+<header>
+  <div class="logo">K35</div>
+  <nav class="navbar">
+    <input type="checkbox" id="menu-toggle" />
+<label for="menu-toggle" class="hamburger"></label>
+<button id="themeToggle">🌙</button>
+    <ul class="menu">
+      
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#destinations">Destinations</a></li>
+      <li><a href="index.html#packages">Packages</a></li>
+      <li><a href="contact_form.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- CONTACT FORM -->
+<section class="contact-container">
+  <h2>Contact Us ✈️</h2>
+
+  <form onsubmit="return validateForm()" novalidate>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <span id="nameError" class="error"></span>
+
+    <input type="text" id="email" placeholder="Your Email">
+    <span id="emailError" class="error"></span>
+
+    <select id="subject">
+  <option value="">Select Inquiry</option>
+  <option value="booking">Booking</option>
+  <option value="package">Package Info</option>
+  <option value="support">Support</option>
+</select>
+<span id="subjectError" class="error"></span>
+
+<textarea id="message" placeholder="Your Message" rows="4"></textarea>
+<span id="messageError" class="error"></span>
+
+    <input type="text" id="phone" placeholder="Phone Number">
+    <span id="phoneError" class="error"></span>
+
+    <select id="country">
+      <option value="">Select Country</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+    </select>
+    <span id="countryError" class="error"></span>
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<!-- SAME FOOTER -->
+<footer>
+  <h3>Summer Travel Agency</h3>
+  <p>Email: travel@email.com</p>
+  <p>Phone: +91 7002370310</p>
+</footer>
+
+<script>
+function validateForm() {
+  let valid = true;
+
+  document.getElementById("nameError").innerHTML = "";
+document.getElementById("emailError").innerHTML = "";
+document.getElementById("subjectError").innerHTML = "";
+document.getElementById("messageError").innerHTML = "";
+document.getElementById("phoneError").innerHTML = "";
+document.getElementById("countryError").innerHTML = "";
+  let name = document.getElementById("name").value.trim();
+  let namePattern = /^[A-Za-z ]+$/;
+
+  if (name === "") {
+    document.getElementById("nameError").innerHTML = "Name is required";
+    valid = false;
+  } else if (!name.match(namePattern)) {
+    document.getElementById("nameError").innerHTML = "Only letters allowed";
+    valid = false;
+  }
+
+  let email = document.getElementById("email").value.trim();
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+  if (email === "") {
+    document.getElementById("emailError").innerHTML = "Email is required";
+    valid = false;
+  } else if (!email.match(emailPattern)) {
+    document.getElementById("emailError").innerHTML = "Invalid email format";
+    valid = false;
+  }
+
+  let subject = document.getElementById("subject").value;
+if (subject === "") {
+  document.getElementById("subjectError").innerHTML = "Select inquiry type";
+  valid = false;
+}
+
+let message = document.getElementById("message").value.trim();
+if (message === "") {
+  document.getElementById("messageError").innerHTML = "Message is required";
+  valid = false;
+}
+
+  let phone = document.getElementById("phone").value.trim();
+  let phonePattern = /^[0-9]{10}$/;
+
+  if (phone === "") {
+  document.getElementById("phoneError").innerHTML = "Phone is required";
+  valid = false;
+} else if (!phone.match(phonePattern)) {
+  document.getElementById("phoneError").innerHTML = "Enter valid 10-digit number";
+  valid = false;
+}
+
+  let country = document.getElementById("country").value;
+
+  if (country === "") {
+    document.getElementById("countryError").innerHTML = "Select country";
+    valid = false;
+  }
+
+  if (valid) {
+    document.querySelector(".contact-container").innerHTML =
+  "<h2>✅ Message Sent!</h2><p>We’ll get back to you soon ✈️</p><br><button onclick='location.reload()'>Send Another</button>";
+}
+
+  return valid;
+}
+
+document.getElementById("themeToggle").onclick = () => {
+  document.body.classList.toggle("dark-mode");
+};
+</script>
+
+</body>
+</html>
