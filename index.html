@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K35 Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+</head>
+<body>
+  <div id="progressBar"></div>
+
+<header>
+  <div class="logo">K35</div>
+ <nav class="navbar">
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="hamburger"></label>
+  <button id="themeToggle">🌙</button>
+  <ul class="menu">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="contact_form.html">Contact</a></li>
+    <li id="userDisplay"></li>
+    <li><a href="login.html" onclick="logout()">Logout</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+  <div class="slider">
+    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80');"></div>
+
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80');"></div>
+
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1400&q=80');"></div>
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');"></div>
+
+<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1');"></div>
+
+<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e');"></div>
+  </div>
+  
+
+  <div class="hero-content">
+    <h1 id="hero-text"></h1>
+    <p>Explore beaches, mountains and tropical adventures.</p>
+    <button onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">
+  Start Exploring
+</button>
+  </div>
+
+  <div class="slider-controls">
+  <span class="prev" onclick="changeSlide(-1)">❮</span>
+  <span class="next" onclick="changeSlide(1)">❯</span>
+</div>
+<div class="dots">
+  <span class="dot active" onclick="goToSlide(0)"></span>
+  <span class="dot" onclick="goToSlide(1)"></span>
+  <span class="dot" onclick="goToSlide(2)"></span>
+  <span class="dot" onclick="goToSlide(3)"></span>
+  <span class="dot" onclick="goToSlide(4)"></span>
+  <span class="dot" onclick="goToSlide(5)"></span>
+</div>
+
+</section>
+
+<section id="destinations" class="section destinations">
+  <h2 class="fade-in">Top Destinations</h2>
+  <div class="cards-container">
+
+    <div class="card fade-in" onclick="openInfo('maldives')">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60" alt="Maldives" />
+      <div class="card-info">
+        <h3>Maldives</h3>
+        <p>Crystal clear water and luxury island resorts.</p>
+      </div>
+      <button onclick="event.stopPropagation(); openPopup()">Book Now</button>
+    </div>
+
+    <div class="card fade-in" onclick="openInfo('switzerland')">
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=60" alt="Switzerland" />
+      <div class="card-info">
+        <h3>Switzerland</h3>
+        <p>Beautiful mountains and breathtaking views.</p>
+      </div>
+      <button onclick="event.stopPropagation(); openPopup()">Book Now</button>
+    </div>
+
+    <div class="card fade-in" onclick="openInfo('bali')">
+      <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=60" alt="Bali" />
+      <div class="card-info">
+        <h3>Bali</h3>
+        <p>Tropical paradise full of beaches and culture.</p>
+      </div>
+      <button onclick="event.stopPropagation(); openPopup()">Book Now</button>
+    </div>
+
+    <div class="card fade-in" onclick="openInfo('dubai')">
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=60" alt="Dubai" />
+      <div class="card-info">
+        <h3>Dubai</h3>
+        <p>Luxury city full of attractions and adventures.</p>
+      </div>
+     <button onclick="event.stopPropagation(); openPopup()">Book Now</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="travel-icons">✈️ 🏝️ 🧳 🌴</div>
+
+<section id="packages" class="section packages">
+  <h2>Travel Packages</h2>
+  <div class="package-cards">
+
+    <div class="package-card fade-in">
+      <span class="badge">Best Deal</span>
+      <h3>Beach Escape</h3>
+      <p>5 Days luxury beach vacation.</p>
+      <p class="price">₹59,999</p>
+      <button onclick="openPopup()">Book Now</button>
+    </div>
+
+    <div class="package-card fade-in">
+      <h3>Mountain Adventure</h3>
+      <p>7 Days hiking and exploration.</p>
+      <p class="price">₹79,999</p>
+      <button onclick="openPopup()">Book Now</button>
+    </div>
+
+    <div class="package-card fade-in">
+      <h3>City Explorer</h3>
+      <p>Explore famous cities around the world.</p>
+      <p class="price">₹49,999</p>
+      <button onclick="openPopup()">Book Now</button>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact">
+  <h3>Summer Travel Agency</h3>
+  <div class="social-icons">
+  <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+  <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+</div>
+  <p>Email: travel@email.com</p>
+  <p>Phone: +91 7002370310</p>
+  <p>© 2026 Summer Travels</p>
+</footer>
+
+
+
+<script>
+  let userss = localStorage.getItem("loggedInUser");
+
+if (!userss) {
+  window.location.href = "login.html";
+}
+
+  function logout() {
+  localStorage.removeItem("loggedInUser");
+  window.location.href = "login.html";
+}
+  
+  let user = localStorage.getItem("loggedInUser");
+
+if (!user) {
+  window.location.href = "login.html";
+}
+
+let users = localStorage.getItem("loggedInUser");
+if (users) {
+  document.getElementById("userDisplay").innerHTML = "👤 " + users;
+}
+window.addEventListener("scroll", () => {
+
+  // Progress bar
+  let scrollTop = document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (scrollTop / height) * 100;
+  document.getElementById("progressBar").style.width = scrolled + "%";
+
+  // Active navbar
+  let sections = document.querySelectorAll("section");
+  let navLinks = document.querySelectorAll(".menu a");
+
+  sections.forEach(section => {
+    let offset = section.offsetTop - 100;
+    let height = section.offsetHeight;
+    let id = section.getAttribute("id");
+
+    if (scrollTop >= offset && scrollTop < offset + height) {
+      navLinks.forEach(link => link.classList.remove("active"));
+      let activeLink = document.querySelector('.menu a[href="#' + id + '"]');
+      if (activeLink) activeLink.classList.add("active");
+    }
+  });
+
+});
+document.getElementById("themeToggle").onclick = () => {
+  document.body.classList.toggle("dark-mode");
+};
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+let slides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll(".dot");
+let index = 0;
+let interval;
+
+function showSlide(i) {
+  slides.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+
+  slides[i].classList.add("active");
+  dots[i].classList.add("active");
+}
+
+function changeSlide(step) {
+  index = (index + step + slides.length) % slides.length;
+  showSlide(index);
+}
+
+function goToSlide(i) {
+  index = i;
+  showSlide(index);
+}
+
+function startSlider() {
+  interval = setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 4000);
+}
+
+function stopSlider() {
+  clearInterval(interval);
+}
+
+document.querySelector(".hero").addEventListener("mouseenter", stopSlider);
+document.querySelector(".hero").addEventListener("mouseleave", startSlider);
+
+startSlider();
+let text = "Discover Your Perfect Summer";
+let i = 0;
+
+function typeEffect() {
+  if (i < text.length) {
+    document.getElementById("hero-text").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 50);
+  }
+}
+
+typeEffect();
+
+function openInfo(place) {
+  let content = "";
+
+  if (place === "maldives") {
+    content = `
+      <h3>Maldives 🌴</h3>
+      <p><b>Best Time:</b> Nov – April</p>
+      <p><b>Famous For:</b> Clear water, luxury resorts</p>
+      <p><b>Activities:</b> Snorkeling, scuba diving</p>
+    `;
+  }
+
+  if (place === "switzerland") {
+    content = `
+      <h3>Switzerland 🏔️</h3>
+      <p><b>Best Time:</b> June – Sept</p>
+      <p><b>Famous For:</b> Alps, snow, scenic trains</p>
+      <p><b>Activities:</b> Skiing, hiking</p>
+    `;
+  }
+
+  if (place === "bali") {
+    content = `
+      <h3>Bali 🌊</h3>
+      <p><b>Best Time:</b> April – Oct</p>
+      <p><b>Famous For:</b> Beaches, temples</p>
+      <p><b>Activities:</b> Surfing, temple tours</p>
+    `;
+  }
+
+  if (place === "dubai") {
+    content = `
+      <h3>Dubai 🌆</h3>
+      <p><b>Best Time:</b> Nov – March</p>
+      <p><b>Famous For:</b> Luxury, Burj Khalifa</p>
+      <p><b>Activities:</b> Desert safari, shopping</p>
+    `;
+  }
+
+  document.getElementById("popupContent").innerHTML =
+    content + `<br><button onclick="closeInfo()">Close</button>`;
+
+  document.getElementById("infoPopup").style.display = "flex";
+}
+
+function closeInfo() {
+  document.getElementById("infoPopup").style.display = "none";
+}
+function closeBooking() {
+  document.getElementById("popup").style.display = "none";
+}
+
+
+</script>
+
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h3>Booking Request ✈️</h3>
+    <p>Our team will contact you soon!</p>
+    <button onclick="closeBooking()">Close</button>
+  </div>
+</div>
+<div id="infoPopup" class="popup">
+  <div class="popup-content" id="popupContent"></div>
+</div>
+</body>
+</html>
