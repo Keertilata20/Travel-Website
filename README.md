@@ -25,14 +25,14 @@ This project was originally created as part of a Web Technology lab and later en
 
 ### 🔐 Login & Home
 <p align="center">
-  <img src="screenshots/login.png" width="45%" />
-  <img src="screenshots/home.png" width="45%" />
+  <img src="screenshots/login.png" width="45%" style="border-radius:10px;" />
+  <img src="screenshots/home.png" width="45%" style="border-radius:10px;" />
 </p>
 
 ### 📦 Packages & Contact
 <p align="center">
-  <img src="screenshots/packages.png" width="45%" />
-  <img src="screenshots/contact.png" width="45%" />
+  <img src="screenshots/packages.png" width="45%" style="border-radius:10px;" />
+  <img src="screenshots/contact.png" width="45%" style="border-radius:10px;" />
 </p>
 
 ---
